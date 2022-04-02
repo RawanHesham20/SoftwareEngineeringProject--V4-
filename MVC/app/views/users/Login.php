@@ -1,3 +1,13 @@
+<html>
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  </head>
+  <body>
 <?php
 class Login extends view
 {
@@ -5,12 +15,12 @@ class Login extends view
   {
     $title = $this->model->title;
 
-    require APPROOT . '/views/inc/header.php';
-    flash('register_success');
+    
+    
     $text = <<<EOT
     <div class="jumbotron jumbotron-fluid">
     <div class="container">
-      <h1 class="display-4"> $title</h1>
+      <h1 class="display-4"> Admin Login Page</h1>
     </div>
   </div>
 
@@ -20,19 +30,19 @@ class Login extends view
 EOT;
     echo $text;
     $this->printForm();
-    require APPROOT . '/views/inc/footer.php';
+ 
   }
 
   private function printForm()
   {
     $action = URLROOT . 'users/login';
-    $registerUrl = URLROOT . 'users/register';
+    
 
     $text = <<<EOT
     <div class="row">
     <div class="col-md-6 mx-auto">
     <div class="card card-body bg-light mt-5">
-    <h2>Sign Up</h2>
+    <h2>Login</h2>
     <form action="$action" method="post">
 EOT;
 
@@ -41,19 +51,14 @@ EOT;
     $this->printPassword();
 
     $text = <<<EOT
-    <div class="container">
+    <div class="container" >
     <div class="checkbox mb-3 mt-3">
-        <label>
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
       </div>
       <div class="row mt-4">
         <div class="col">
           <input type="submit" value="Login" class="form-control btn btn-lg btn-primary btn-block">
         </div>
-        <div class="col">
-          <a href="$registerUrl" class="form-control btn btn-lg btn-block">New User, Sign up</a>
-        </div>
+
       </div>
       </div>
     </form>
@@ -96,3 +101,4 @@ EOT;
     echo $text;
   }
 }
+
