@@ -17,5 +17,12 @@ class Pages extends Controller
         $aboutView = new About($this->getModel(), $this);
         $aboutView->output();
     }
+        public function reservation()
+    {
+        $viewPath = VIEWS_PATH . 'pages/Reservation.php';
+        require_once $viewPath;
+        $reservationView = new Reservation($this->getModel(), $this);
+        $reservationView->output();
+    }
 
 }
