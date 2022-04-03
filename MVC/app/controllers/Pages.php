@@ -24,5 +24,12 @@ class Pages extends Controller
         $reservationView = new Reservation($this->getModel(), $this);
         $reservationView->output();
     }
+          public function eventdetails()
+    {
+        $viewPath = VIEWS_PATH . 'pages/EventDetails.php';
+        require_once $viewPath;
+        $eventdetailsView = new EventDetails($this->getModel(), $this);
+        $eventdetailsView->output();
+    }
 
 }
