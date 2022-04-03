@@ -50,7 +50,7 @@ EOT;
 
   private function printForm()
   {
-    $action = URLROOT . 'users/login';
+    $action = URLROOT . 'pages/adminPage';
     $registerUrl = URLROOT . 'users/register';
 
     $text = <<<EOT
