@@ -73,12 +73,13 @@ EOT;
         </label>
       </div>
       <div class="row mt-4">
+        <div class="row mt-4">
         <div class="col">
-          <input type="submit" value="Login" class="form-control btn btn-lg btn-primary btn-block">
+          <button style="padding:20px 100px; display:inline-block; background-color:pink; text-align:center; color:white; border-color:white; margin:10px 400px; font-size:20px;">Login</button>
         </div>
-        <div class="col">
-          <a href="$registerUrl" class="form-control btn btn-lg btn-block">New User, Sign up</a>
-        </div>
+      </div>
+      </div>
+        
       </div>
       </div>
     </form>
