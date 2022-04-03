@@ -31,5 +31,12 @@ class Pages extends Controller
         $eventdetailsView = new EventDetails($this->getModel(), $this);
         $eventdetailsView->output();
     }
+        public function info()
+    {
+        $viewPath = VIEWS_PATH . 'pages/info.php';
+        require_once $viewPath;
+        $infoView = new info($this->getModel(), $this);
+        $infoView->output();
+    }
 
 }
