@@ -29,34 +29,33 @@
 	<![endif]-->
 
 	</head>
-	<body>
+	
 	  <header id="fh5co-header-section" class="sticky-banner">
 			<div class="container">
 				<div class="nav-header">
+
+							
+							
+							
+
 					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-					<h1 id="fh5co-logo"><a aria-current="page" href="<?php echo URLROOT . 'public'; ?>">Home</a></h1>
+					<h1 id="fh5co-logo" style="font-size: 30px; font-style: italic; color: black;"><a aria-current="page" href="<?php echo URLROOT . 'public'; ?>">Ekdolosi</a></h1>
 					<!-- START #fh5co-menu-wrap -->
 					<nav id="fh5co-menu-wrap" role="navigation">
 						<ul class="sf-menu" id="fh5co-primary-menu">
 							<li class="active"><a aria-current="page" href="<?php echo URLROOT . 'public'; ?>">Home</a></li>
-							<li>
-								<a href="groom-bride.html" class="fh5co-sub-ddown">Groom &amp; Bride</a>
-								<ul class="fh5co-sub-menu">
-									<li><a href="#">Dropdown Menu 1</a></li>
-									<li><a href="#">Dropdown Menu 2</a></li>
-									<li><a href="#">Dropdown Menu 3</a></li>
-									<li><a href="#">Dropdown Menu 4</a></li>
-								</ul>
-							</li>
-							<li><a href="when-where.html">When &amp; Where</a></li>
-							<li><a href="<?php echo URLROOT . 'pages/about'; ?>">About Us</a></li>
+							<li><a href="<?php echo URLROOT . 'pages/Reservation'; ?>">Reservation Form</a></li>
 							<li><a href="<?php echo URLROOT . 'pages/gallery'; ?>">Gallery</a></li>
-							<li><a href="blog.html">Blog</a></li>
+							<li><a href="users/Login">Login as an admin</a></li>
+							
+							
+							
+							
 						</ul>
 					</nav>
 				</div>
 			</div>
-		</header>	
+		</header>
 
     </div>
   </div>
