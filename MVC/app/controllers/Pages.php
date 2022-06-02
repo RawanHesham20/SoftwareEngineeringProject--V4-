@@ -50,6 +50,25 @@ class Pages extends Controller
         $AddWorkerView->output();
     }
 
+    public function EditWorker($id)
+    {
+
+
+      $registerModel = $this->getModel();
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $registerModel->setName(trim($_POST['name']));
+            $registerModel->setDepartment(trim($_POST['department']));
+            $registerModel->setNumber(trim($_POST['number']));
+            $registerModel->Edit();
+                    redirect('pages/info');
+
+        }
+
+        $viewPath = VIEWS_PATH . 'pages/EditWorker.php';
+        require_once $viewPath;
+        $EditWorkerView = new EditWorker($this->getModel(), $this);
+        $EditWorkerView->output();
+    }
 
     
             public function AddSuppliers()
