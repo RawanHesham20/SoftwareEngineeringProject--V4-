@@ -33,6 +33,14 @@ class Pages extends Controller
     }
     
     
+    public function ViewSuppliers()
+    {
+        $viewPath = VIEWS_PATH . 'pages/ViewSuppliers.php';
+        require_once $viewPath;
+        $Suppliersview = new ViewSuppliers($this->getModel(), $this);
+        $Suppliersview->output();
+    }
+    
     public function AddWorker()
     {
                 $registerModel = $this->getModel();
