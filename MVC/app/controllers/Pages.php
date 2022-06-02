@@ -9,6 +9,14 @@ class Pages extends Controller
         $indexView = new Index($this->getModel(), $this);
         $indexView->output();
     }
+    
+       public function adminPage()
+    {
+        $viewPath = VIEWS_PATH . 'pages/adminPage.php';
+        require_once $viewPath;
+        $infoView = new adminPage($this->getModel(), $this);
+        $infoView->output();
+    }
 
     public function about()
     {
