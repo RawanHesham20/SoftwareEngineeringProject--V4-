@@ -24,14 +24,29 @@ class Pages extends Controller
         $reservationView = new Reservation($this->getModel(), $this);
         $reservationView->output();
     }
-          public function eventdetails()
+       public function eventdetails()
     {
+       $registerModel = $this->getModel();
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $registerModel->setSupplier(trim($_POST['supplier']));
+            $registerModel->setDate(trim($_POST['date']));
+            $registerModel->setStartTime(trim($_POST['starttime']));
+            $registerModel->setEndTime(trim($_POST['endtime']));
+            $registerModel->setEventType(trim($_POST['eventtype']));
+            $registerModel->setLocation(trim($_POST['location']));
+            $registerModel->setClient(trim($_POST['client']));
+            $registerModel->setGuestsNumber(trim($_POST['guestsnumber']));  
+            $registerModel->setRequirements(trim($_POST['requirements']));            
+            $registerModel->Add();
+                    redirect('pages/adminPage');
+
+        } 
+
         $viewPath = VIEWS_PATH . 'pages/EventDetails.php';
         require_once $viewPath;
         $eventdetailsView = new EventDetails($this->getModel(), $this);
         $eventdetailsView->output();
     }
-    
     
     public function ViewSuppliers()
     {
