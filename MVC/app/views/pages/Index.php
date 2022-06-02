@@ -1,16 +1,4 @@
-<?php
-class Index extends View
-{
-  public function output()
-  {
-    $title = $this->model->title;
-    $subtitle = $this->model->subtitle;
-    
-
-    require APPROOT . '/views/inc/header.php';
-    $text = <<<EOT
-   
-<html>
+ <html>
 
 	<head>
 		<meta charset="utf-8">
@@ -48,45 +36,50 @@ class Index extends View
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 
+<?php
+ require APPROOT . '/views/inc/header.php';
+class Index extends View
+{
+  public function output()
+  {
+    $title = $this->model->title;
+    $subtitle = $this->model->subtitle;
+    
 
-<! start of Upcoming events section>
-			
+   
 
-		<div id="fh5co-when-where" class="fh5co-section-gray">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<h2>Our Upcoming Events</h2>
-					</div>
-				</div>
-				<div class="row row-bottom-padded-md">
-					<div class="col-md-6 text-center animate-box">
-						<div class="wedding-events">
-							<div class="ceremony-bg" style="background-image: url(images/prom.JPG);"></div>
-							<div class="desc">
-								<h3>Prom for ELS School</h3>
-								<p><strong>Saturday, April 14, 2022, 8.00 PM - 12.00AM @ Triumph hotel</strong></p>
-								<p></p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 text-center animate-box">
-						<div class="wedding-events">
-							<div class="ceremony-bg" style="background-image: url(images/graduation.JPG);"></div>
-							<div class="desc">
-								<h3>Graduation for AIS</h3>
-								<p><strong>Saturday, December 28, 2022, 6.00 PM - 11.00PM @ El Manara</strong></p>
-								<p></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+    $event=$this->model->getAllUpcomingEvents();
 
-<!end of upcoming events section>
+?>
+
+<br><br>
+	
+            <div class="container">
+            	<h1> Upcoming Events </h1>
+                        <div class="col-md-6">
 
 
+                  <?php
+                       
+                        foreach($event as $x){ ?>
+                        	<img src="<?php echo IMAGEROOT . $x->Picture; ?>"style=" width: 500px; height: 300">
+                        	<br>
+                        	<?php echo $x->Title; ?><br>
+                        	<?php echo " ON " ?><?php echo $x->Date; ?><?php echo " Specifically     " ?>
+                        	<?php echo $x->Time; ?><br>
+                        	<?php echo " @ " ?><?php echo $x->Location; ?><br>
+
+                        	</div>
+                        
+          
+
+<?php } ?>
+	<h2> For Reservation call us on 01203371610 </h2>
+	<br>
+</div>
+<?php
+
+    $text = <<<EOT
 
 	<!-- About Section -->
 		<div id="fh5co-countdown">
@@ -123,55 +116,6 @@ class Index extends View
 		</div>
 <!end of about us section>
 
-<!start of feedback>
-	<div id="feedback" class="section">
-    <div class="section-center">
-      <div class="container">
-        <div class="row">
-          <div class="booking-form">
-            <div class="form-header">
-              <h1>Give us Your feedback about your last event</h1>
-            </div>
-            <form>
-              <div class="form-group">
-                <input class="form-control" type="text" placeholder="Enter your name">
-                <span class="form-label">Name</span>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input class="form-control" type="email" placeholder="Enter your Email">
-                    <span class="form-label">Email</span>
-                  </div>
-                </div>
-                <div class="form-group">
-                <input class="form-control" type="text" placeholder="Enter your feedback">
-                <span class="form-label">Feedback</span>
-              </div>
-                              <div class="col-md-4">
-                  <div class="form-group">
-                    <select class="form-control" required>
-                      <option value="" selected hidden placeholder="5 is the best">Rating</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                    </select>
-                    <span class="select-arrow"></span>
-                    <span class="form-label">Rooms</span>
-                  </div>
-                </div>
-              <div class="form-btn">
-                <button class="submit-btn">Submit</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-<!end of feedback>
 
 
 	<!-- END fh5co-page -->
