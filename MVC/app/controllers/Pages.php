@@ -31,12 +31,31 @@ class Pages extends Controller
         $eventdetailsView = new EventDetails($this->getModel(), $this);
         $eventdetailsView->output();
     }
-        public function info()
+    
+            public function AddSuppliers()
+    {
+                $registerModel = $this->getModel();
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $registerModel->setName(trim($_POST['name']));
+            $registerModel->setEmail(trim($_POST['email']));
+            $registerModel->setNumber(trim($_POST['number'])); 
+            $registerModel->setSupplies(trim($_POST['supplies']));         
+            $registerModel->Add();
+                    redirect('pages/ViewSuppliers');
+
+        }
+        $viewPath = VIEWS_PATH . 'pages/AddSuppliers.php';
+        require_once $viewPath;
+        $AddSupplierView = new AddSuppliers($this->getModel(), $this);
+        $AddSupplierView->output();
+    }
+   public function info()
     {
         $viewPath = VIEWS_PATH . 'pages/info.php';
         require_once $viewPath;
         $infoView = new info($this->getModel(), $this);
         $infoView->output();
     }
+
 
 }
