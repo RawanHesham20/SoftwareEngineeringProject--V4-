@@ -17,13 +17,47 @@ class Pages extends Controller
         $aboutView = new About($this->getModel(), $this);
         $aboutView->output();
     }
-        public function reservation()
+ public function reservation()
     {
+
+           $registerModel = $this->getModel();
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            $registerModel->setName(trim($_POST['name']));
+            $registerModel->setMeetingDate(trim($_POST['date']));
+             $registerModel->setMeetingTime(trim($_POST['time']));
+            $registerModel->setEventType(trim($_POST['eventtype'])); 
+             $registerModel->setNumber(trim($_POST['number']));   
+             $registerModel->setEmail(trim($_POST['email']));        
+            $registerModel->Add();
+                    redirect('pages/index');
+
+        }
         $viewPath = VIEWS_PATH . 'pages/Reservation.php';
         require_once $viewPath;
         $reservationView = new Reservation($this->getModel(), $this);
         $reservationView->output();
     }
+
+    public function feedback()
+    {
+            $registerModel = $this->getModel();
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            $registerModel->setname(trim($_POST['name']));
+            $registerModel->setemail(trim($_POST['email']));
+            $registerModel->setfeedback(trim($_POST['feedback']));
+            $registerModel->setrating(trim($_POST['rating']));            
+            $registerModel->Add();
+                    redirect('pages/index');
+
+        }
+        $viewPath = VIEWS_PATH . 'pages/feedback.php';
+        require_once $viewPath;
+        $feedbackView = new feedback($this->getModel(), $this);
+        $feedbackView->output();
+    }
+
        public function eventdetails()
     {
        $registerModel = $this->getModel();
