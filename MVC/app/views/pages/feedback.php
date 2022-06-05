@@ -134,7 +134,6 @@ class feedback extends View
   <head>
     <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Nuptial &mdash; 100% Free Fully Responsive HTML5 Template by FREEHTML5.co</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
   <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
@@ -203,44 +202,40 @@ class feedback extends View
                     <span class="select-arrow"></span>
                   </div>
                 </div>
-<p>How much do you agree with the following statements regarding the seminar?<span class="required">*</span></p><br>
+<p>How much do you agree with the following statements regarding the event?<span class="required">*</span></p><br>
            <div class="statements-block">
           
           <table>
             <thead>
               <tr>
                 <th class="first-col"></th>
-                <th>Strongly Disagree</th>
-                <th>Disagree</th>
-                <th>Neutral</th>
-                <th>Agree</th>
-                <th>Strongly Agree</th>
+                <th>Very Satisfied</th>
+                <th>Satisfied</th>
+                <th>Unsatisfied</th>
+                <th>Very Unsatisfied</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td class="first-col">The information presented was useful</td>
-                <td><input type="radio" value="None" name="useful" required/></td>
-                <td><input type="radio" value="None" name="useful" required/></td>
-                <td><input type="radio" value="None" name="useful" required/></td>
-                <td><input type="radio" value="None" name="useful" required/></td>
-                <td><input type="radio" value="None" name="useful" required/></td>
+                <td class="first-col">Overall Event Experience</td>
+                <td><input type="radio" value="very satisfied" name="experience" required/></td>
+                <td><input type="radio" value="satisfied" name="experience" required/></td>
+                <td><input type="radio" value="unsatisfied" name="experience" required/></td>
+                <td><input type="radio" value="very unsatisfied" name="experience" required/></td>
               </tr>
               <tr>
-                <td class="first-col">The speaker was engaging and knowledgeable</td>
-                <td><input type="radio" value="None" name="speaker" required/></td>
-                <td><input type="radio" value="None" name="speaker" required/></td>
-                <td><input type="radio" value="None" name="speaker" required/></td>
-                <td><input type="radio" value="None" name="speaker" required/></td>
-                <td><input type="radio" value="None" name="speaker" required/></td>
+                <td class="first-col" >Organization of the event</td>
+                <td><input type="radio" value="very satisfied" name="organization" required/></td>
+                <td><input type="radio" value="satisfied" name="organization" required/></td>
+                <td><input type="radio" value="unsatisfied" name="organization" required/></td>
+                <td><input type="radio" value="very unsatisfied" name="organization" required/></td>
               </tr>
               <tr>
-                <td class="first-col">The length of this seminar was satisfactory</td>
-                <td><input type="radio" value="None" name="length" required/></td>
-                <td><input type="radio" value="None" name="length" required/></td>
-                <td><input type="radio" value="None" name="length" required/></td>
-                <td><input type="radio" value="None" name="length" required/></td>
-                <td><input type="radio" value="None" name="length" required/></td>
+                <td class="first-col" >Our Team Members</td>
+                <td><input type="radio" value="very satisfied" name="teammembers" required/></td>
+                <td><input type="radio" value="satisfied" name="teammembers" required/></td>
+                <td><input type="radio" value="unsatisfied" name="teammembers" required/></td>
+                <td><input type="radio" value="very unsatisfied" name="teammembers" required/></td>
               </tr>
             </tbody>
           </table>
