@@ -72,15 +72,17 @@ class Pages extends Controller
         $reservationView->output();
     }
 
-    public function feedback()
+public function feedback()
     {
             $registerModel = $this->getModel();
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-            $registerModel->setname(trim($_POST['name']));
+            $registerModel->setName(trim($_POST['name']));
             $registerModel->setemail(trim($_POST['email']));
-            $registerModel->setfeedback(trim($_POST['feedback']));
-            $registerModel->setrating(trim($_POST['rating']));            
+            $registerModel->setEventType(trim($_POST['eventtype']));
+            $registerModel->setExperience(trim($_POST['experience']));    
+            $registerModel->setOrganization(trim($_POST['organization'])); 
+            $registerModel->setTeamMembers(trim($_POST['teammembers']));         
             $registerModel->Add();
                     redirect('pages/index');
 
