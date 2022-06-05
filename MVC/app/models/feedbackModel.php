@@ -6,17 +6,20 @@ class FeedbackModel extends model
 
      protected $name;
     protected $email;
-    protected $feedback;
-    protected $rating;
+    protected $eventtype;
+    protected $experience;
+    protected $organization;
+    protected $teammembers;
 
     public function __construct()
     {
         parent::__construct();
         $this->name = "";
         $this->email = "";
-
-        $this->feedback = "";
-        $this->rating = "";
+        $this->eventtype = "";
+        $this->experience = "";
+        $this->organization = "";
+        $this->teammembers = "";
     }
     public function getName()
     {
@@ -38,31 +41,51 @@ class FeedbackModel extends model
         $this->email = $email;
     }
 
-    public function getfeedback()
+    public function getEventType()
     {
-        return $this->feedback;
+        return $this->eventtype;
     }
-    public function setfeedback($feedback)
+    public function setEventType($eventtype)
     {
-        $this->feedback = $feedback;
+        $this->eventtype = $eventtype;
     }
 
-    public function getrating()
+    public function getExperience()
     {
-        return $this->rating;
+        return $this->experience;
     }
-    public function setrating($rating)
+    public function setExperience($experience)
     {
-        $this->rating = $rating;
+        $this->experience = $experience;
+    }
+
+    public function getOrganization()
+    {
+        return $this->organization;
+    }
+    public function setOrganization($organization)
+    {
+        $this->organization = $organization;
+    }
+
+    public function getTeamMembers()
+    {
+        return $this->teammembers;
+    }
+    public function setTeamMembers($teammembers)
+    {
+        $this->teammembers = $teammembers;
     }
 
     public function Add()
     {
-        $this->dbh->query("INSERT INTO feedback (`Name`, `Email`, `Feedback`,`rating`) VALUES(:Name, :Email, :Feedback, :rating)");
+        $this->dbh->query("INSERT INTO feedback (`Name`, `Email`, `EventType`,`Experience`,`Organization`,`TeamMembers`) VALUES(:Name, :Email, :EventType, :Experience, :Organization, :TeamMembers)");
         $this->dbh->bind(':Name', $this->name);
         $this->dbh->bind(':Email', $this->email);
-        $this->dbh->bind(':Feedback', $this->feedback);
-        $this->dbh->bind(':rating', $this->rating);
+        $this->dbh->bind(':EventType', $this->eventtype);
+        $this->dbh->bind(':Experience', $this->experience);
+        $this->dbh->bind(':Organization', $this->organization);
+        $this->dbh->bind(':TeamMembers', $this->teammembers);
 
         return $this->dbh->execute();
     }
