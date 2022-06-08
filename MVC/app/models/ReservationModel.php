@@ -10,6 +10,7 @@ class ReservationModel extends model
     protected $eventtype;
     protected $number;
     protected $email;
+    protected $availability;
 
     public function __construct()
     {
@@ -20,6 +21,7 @@ class ReservationModel extends model
          $this->eventtype = '';
           $this->number = '';
            $this->email = '';
+            $this->availability = "1";
     }
 
     public function getName()
@@ -90,5 +92,6 @@ class ReservationModel extends model
 
 
 
-}
 
+
+}
