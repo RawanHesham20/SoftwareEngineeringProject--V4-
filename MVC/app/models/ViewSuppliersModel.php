@@ -8,8 +8,8 @@ class ViewSuppliersModel extends model{
 
         $suppliersRecord = $this->dbh->resultSet();
         return $suppliersRecord;
-    }
-	
+      }
+  	
 }
 
 
