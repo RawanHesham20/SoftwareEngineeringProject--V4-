@@ -125,4 +125,3 @@ class EventDetailsModel extends model
         return $this->dbh->execute();
     }
 }
-
