@@ -47,7 +47,7 @@ class ViewSuppliers extends view
 
 ?>
 
-<div class="container-lg">
+<div class="container" >
       <div class="table-responsive">
           <div class="table-wrapper">
               <div class="table-title">
@@ -61,14 +61,16 @@ class ViewSuppliers extends view
           </div>
 
             <?php $str= "<table class='table table-bordered' width=100%>
-                  <thead>
-                      <tr>
-                           <th>ID</th>
+                  <thead >
+                      <tr style= 'background-color: pink; color:white; font-size:20px;'>
+                      
                           <th>Name</th>
                           <th>Email</th>
                           <th>Phone</th>
                           <th>ProvidedSupplies</th>
                           <th>Action</th>
+                  
+
                       </tr>
                   </thead>";
 
@@ -76,7 +78,7 @@ class ViewSuppliers extends view
                         
                         foreach($suppliers as $x){
                         
-                          $str.="<tr><td>".$x->ID."</td><td>".$x->Name."</td><td>".$x->Email."</td><td>".$x->PhoneNumber."</td><td>".$x->ProvidedSupplies."</td><td><button style= 'background-color: transparent; border:black;'><a href='EditSupplier' style ='color: #FF1493';class='edit' title='Edit' data-toggle='tooltip'><i class='material-icons'>&#xE254;</i></a></button><button style= 'background-color: transparent; border:none;''><a href='DeleteSupplier' style ='color: #FFB6C1;'' class='delete' title='Delete' data-toggle='tooltip'><i class='material-icons'>&#xE872;</i></a> </center></button></td></tr>";
+                          $str.="<tr><td>".$x->Name."</td><td>".$x->Email."</td><td>".$x->PhoneNumber."</td><td>".$x->ProvidedSupplies."</td><td><a href='DeleteSupplier/".$x->ID."' style ='color: #FFB6C1;'' class='delete' title='Delete' data-toggle='tooltip'><i class='material-icons'>&#xE872;</i></a></td></tr>";
 
 
                             }
@@ -90,10 +92,7 @@ class ViewSuppliers extends view
           ?>
         </div></div>
       </body></html>
-          <?php
-   require APPROOT . '/views/inc/footer.php';
-
-              ?>
+ 
 
     
                     
