@@ -9,48 +9,8 @@ class Pages extends Controller
         $indexView = new Index($this->getModel(), $this);
         $indexView->output();
     }
-    
-      public function AddUpcomingEvents()
-    {
 
-           $registerModel = $this->getModel();
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $picture = $_FILES['picture']['name'];
-            $picture_tmp = $_FILES['picture']['tmp_name'];
-
-             move_uploaded_file($picture_tmp,"C:\Users\Rawan\Desktop\1111\htdocs\MVC\public\images".$picture);
-
-            $registerModel->setTitle(trim($_POST['title1']));
-            $registerModel->setDate(trim($_POST['date']));
-             $registerModel->setTime(trim($_POST['time']));
-            $registerModel->setLocation(trim($_POST['location'])); 
-            $registerModel->setPicture($_FILES["picture"]['name']);        
-            $registerModel->Add();
-                    redirect('pages/adminPage');
-
-        }
-        $viewPath = VIEWS_PATH . 'pages/AddUpcomingEvents.php';
-        require_once $viewPath;
-        $upcomingeventsView = new AddUpcomingEvents($this->getModel(), $this);
-        $upcomingeventsView->output();
-    }
-
-       public function adminPage()
-    {
-        $viewPath = VIEWS_PATH . 'pages/adminPage.php';
-        require_once $viewPath;
-        $infoView = new adminPage($this->getModel(), $this);
-        $infoView->output();
-    }
-
-    public function about()
-    {
-        $viewPath = VIEWS_PATH . 'pages/About.php';
-        require_once $viewPath;
-        $aboutView = new About($this->getModel(), $this);
-        $aboutView->output();
-    }
- public function reservation()
+    public function reservation()
     {
 
            $registerModel = $this->getModel();
@@ -72,7 +32,54 @@ class Pages extends Controller
         $reservationView->output();
     }
 
-public function feedback()
+        public function AddAdmin()
+    {
+
+           $registerModel = $this->getModel();
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            $registerModel->setName(trim($_POST['name']));
+            $registerModel->setPassword(trim($_POST['password']));  
+             $registerModel->setEmail(trim($_POST['email']));        
+            $registerModel->Add();
+                    redirect('pages/adminPage');
+
+        }
+        $viewPath = VIEWS_PATH . 'pages/AddAdmin.php';
+        require_once $viewPath;
+        $newadminView = new AddAdmin($this->getModel(), $this);
+        $newadminView->output();
+    }
+
+    public function DeleteSupplier($workerId)
+    {
+                
+        $registerModel = $this->getModel();
+     
+       $registerModel->Delete($workerId);
+            
+
+        $viewPath = VIEWS_PATH . 'pages/DeleteSupplier.php';
+        require_once $viewPath;
+        $DeleteWorkerView = new DeleteSupplier($this->getModel(), $this);
+        $DeleteWorkerView->output();
+    }
+    public function DeleteAdmin($workerId)
+    {
+                
+        $registerModel = $this->getModel();
+     
+       $registerModel->Delete($workerId);
+            
+
+        $viewPath = VIEWS_PATH . 'pages/DeleteAdmin.php';
+        require_once $viewPath;
+        $DeleteWorkerView = new DeleteAdmin($this->getModel(), $this);
+        $DeleteWorkerView->output();
+    }
+
+
+    public function feedback()
     {
             $registerModel = $this->getModel();
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -93,6 +100,14 @@ public function feedback()
         $feedbackView->output();
     }
 
+        public function gallery()
+    {
+        $viewPath = VIEWS_PATH . 'pages/Gallery.php';
+        require_once $viewPath;
+        $galleryView = new Gallery($this->getModel(), $this);
+        $galleryView->output();
+    }
+    
        public function eventdetails()
     {
        $registerModel = $this->getModel();
@@ -116,22 +131,30 @@ public function feedback()
         $eventdetailsView = new EventDetails($this->getModel(), $this);
         $eventdetailsView->output();
     }
-    
-    public function ViewSuppliers()
+
+    public function info()
+    {
+        $viewPath = VIEWS_PATH . 'pages/info.php';
+        require_once $viewPath;
+        $infoView = new info($this->getModel(), $this);
+        $infoView->output();
+    }
+
+        public function ViewSuppliers()
     {
         $viewPath = VIEWS_PATH . 'pages/ViewSuppliers.php';
         require_once $viewPath;
         $Suppliersview = new ViewSuppliers($this->getModel(), $this);
         $Suppliersview->output();
     }
-    
+
     public function AddWorker()
     {
                 $registerModel = $this->getModel();
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $registerModel->setName(trim($_POST['name']));
             $registerModel->setDepartment(trim($_POST['department']));
-            $registerModel->setNumber(trim($_POST['number']));
+            $registerModel->setNumber(trim($_POST['number']));          
             $registerModel->Add();
                     redirect('pages/info');
 
@@ -142,28 +165,58 @@ public function feedback()
         $AddWorkerView->output();
     }
 
-    public function EditWorker($id)
+    function getWorkerById( $workerId , $worker) {
+        foreach ($worker as $x){
+            if($x->id == $workerId)
+                return $x;
+        }
+    }
+
+    function getAdminById( $workerId , $worker) {
+        foreach ($worker as $x){
+            if($x->id == $workerId)
+                return $x;
+        }
+    }
+    
+    public function DeleteWorker($workerId)
     {
+                
+        $registerModel = $this->getModel();
+     
+       $registerModel->Delete($workerId);
+            
 
+        $viewPath = VIEWS_PATH . 'pages/DeleteWorker.php';
+        require_once $viewPath;
+        $DeleteWorkerView = new DeleteWorker($this->getModel(), $this);
+        $DeleteWorkerView->output();
+    }
 
-      $registerModel = $this->getModel();
+    public function EditWorker($workerId)
+    {      $workerModel = $this->loadModel('infoModel');
+               
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $registerModel->setName(trim($_POST['name']));
-            $registerModel->setDepartment(trim($_POST['department']));
-            $registerModel->setNumber(trim($_POST['number']));
-            $registerModel->Edit();
-                    redirect('pages/info');
+
+            $oldWorker = $workerModel->getWorkerById($workerId )[0];
+            $editModel = $this->getModel();
+            
+            
+            $editModel->setName(trim($_POST['Name']));
+            $editModel->setDepartment(trim($_POST['Department']));
+            $editModel->setNumber(trim($_POST['PhoneNumber']));          
+            $editModel->Edit($workerId);
+                   redirect('pages/info');
 
         }
+        $this->worker = $workerModel->getWorkerById($workerId)[0];
 
         $viewPath = VIEWS_PATH . 'pages/EditWorker.php';
         require_once $viewPath;
         $EditWorkerView = new EditWorker($this->getModel(), $this);
         $EditWorkerView->output();
     }
-
-    
-            public function AddSuppliers()
+        public function AddSuppliers()
     {
                 $registerModel = $this->getModel();
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -180,13 +233,46 @@ public function feedback()
         $AddSupplierView = new AddSuppliers($this->getModel(), $this);
         $AddSupplierView->output();
     }
-   public function info()
+
+
+    public function adminPage()
     {
-        $viewPath = VIEWS_PATH . 'pages/info.php';
+        $viewPath = VIEWS_PATH . 'pages/adminPage.php';
         require_once $viewPath;
-        $infoView = new info($this->getModel(), $this);
+        $infoView = new adminPage($this->getModel(), $this);
         $infoView->output();
     }
 
+    public function AddUpcomingEvents()
+    {
+
+           $registerModel = $this->getModel();
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $picture = $_FILES['picture']['name'];
+            $picture_tmp = $_FILES['picture']['tmp_name'];
+
+             move_uploaded_file($picture_tmp,"C:\Users\Rawan\Desktop\1111\htdocs\MVC\public\images".$picture);
+
+            $registerModel->setTitle(trim($_POST['title1']));
+            $registerModel->setDate(trim($_POST['date']));
+             $registerModel->setTime(trim($_POST['time']));
+            $registerModel->setLocation(trim($_POST['location'])); 
+            $registerModel->setPicture($_FILES["picture"]['name']);        
+            $registerModel->Add();
+                    redirect('pages/adminPage');
+
+        }
+        $viewPath = VIEWS_PATH . 'pages/AddUpcomingEvents.php';
+        require_once $viewPath;
+        $upcomingeventsView = new AddUpcomingEvents($this->getModel(), $this);
+        $upcomingeventsView->output();
+    }
+    public function schedule()
+    {
+        $viewPath = VIEWS_PATH . 'pages/schedule.php';
+        require_once $viewPath;
+        $Suppliersview = new schedule($this->getModel(), $this);
+        $Suppliersview->output();
+    }
 
 }
