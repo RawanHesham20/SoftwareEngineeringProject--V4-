@@ -4,10 +4,10 @@ class AddWorker extends view
   public function output()
   {
 
-    require APPROOT . '/views/inc/navbar.php';
+      require APPROOT . '/views/pages/adminPage.php';
 
     $this->printForm();
-    require APPROOT . '/views/inc/footer.php';
+    
 
   }
 
@@ -36,7 +36,6 @@ EOT;
       <label for="PhoneNumber"> number: <sup>*</sup></label>
       <input type="text" name="number" id="number">
     </div>
-    <div class="container">
       <div class="row mt-4">
         <div class="col">
           <input type="submit" value="Add" class="form-control btn btn-lg btn-primary btn-block">
@@ -49,6 +48,7 @@ EOT;
     </div>
 EOT;
     echo $text;
+    require APPROOT . '/views/inc/footer.php';
   }
 
 }
