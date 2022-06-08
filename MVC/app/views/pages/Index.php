@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Nuptial &mdash; 100% Free Fully Responsive HTML5 Template by FREEHTML5.co</title>
+	<title>Ekdolosievents</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
@@ -55,27 +55,26 @@ class Index extends View
 <br><br>
 	
             <div class="container">
-            	<h1> Upcoming Events </h1>
+            	<center><h1 style="background-color:White; color:pink; width:700px; height:60px;"> Upcoming Events </h1></center>
                         <div class="col-md-6">
 
 
                   <?php
                        
                         foreach($event as $x){ ?>
-                        	<img src="<?php echo IMAGEROOT . $x->Picture; ?>"style=" width: 500px; height: 300">
+                        	<img src="<?php echo IMAGEROOT . $x->Picture; ?>"style=" width: 500px; height: 300; border-image: pink;">
                         	<br>
-                        	<?php echo $x->Title; ?><br>
-                        	<?php echo " ON " ?><?php echo $x->Date; ?><?php echo " Specifically     " ?>
-                        	<?php echo $x->Time; ?><br>
-                        	<?php echo " @ " ?><?php echo $x->Location; ?><br>
-
+                        	<center><h2><?php echo $x->Title; ?></h2>
+                        	<?php echo $x->Date; ?><?php echo "," ?>
+                        	<?php echo $x->Time; ?><?php echo "," ?>
+                        	<?php echo $x->Location; ?><br><br>
+</center>
                         	</div>
                         
           
 
 <?php } ?>
-	<h2> For Reservation call us on 01203371610 </h2>
-	<br>
+<br>	<br>
 </div>
 <?php
 
