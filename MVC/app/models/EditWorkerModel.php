@@ -1,9 +1,10 @@
 <?php
-
+require_once 'infoModel.php';
 class EditWorkerModel extends model
 {
-    public  $title = 'Edit Worker';
-   protected $id;
+    public  $title = 'Add New Worker';
+    protected $id;
+
     protected $name;
     protected $department;
     protected $number;
@@ -11,57 +12,56 @@ class EditWorkerModel extends model
     public function __construct()
     {
         parent::__construct();
-        $this->id = '';
-        $this->name = '';
-        $this->department    = '';
-        $this->number = '';
+        $this->id='';
+        $this->Name = '';
+        $this->Department    = '';
+        $this->PhoneNumber = '';
     }
-  public function getID()
+
+    public function getId()
     {
         return $this->id;
     }
-    public function setID($id)
+    public function setId($id)
     {
         $this->id = $id;
     }
     public function getName()
     {
-        return $this->name;
+        return $this->Name;
     }
-    public function setName($name)
+    public function setName($Name)
     {
-        $this->name = $name;
+        $this->Name = $Name;
     }
 
     public function getDepartment()
     {
-        return $this->department;
+        return $this->Department;
     }
-    
-    public function setDepartment($department)
+    public function setDepartment($Department)
     {
-        $this->department = $department;
+        $this->Department = $Department;
     }
 
     public function getNumber()
     {
-        return $this->number;
+        return $this->PhoneNumber;
     }
-    public function setNumber($number)
+    public function setNumber($PhoneNumber)
     {
-        $this->number = $number;
+        $this->PhoneNumber = $PhoneNumber;
     }
 
 
     public function Edit($id)
     {
-      $this->dbh->query("UPDATE `workers` SET `Name` = :Name, `Department` = :Department, `PhoneNumber` = :Number WHERE `workers`.`id` = ".$id);
-      $this->dbh->bind(':Name', $this->Name);
-      $this->dbh->bind(':Department', $this->Department);
-      $this->dbh->bind(':PhoneNumber', $this->PhoneNumber);
-
-      $workerRecord = $this->dbh->execute();
-      return $workerRecord;
+        $this->dbh->query("UPDATE `workers` SET `Name` = :Name, `Department` = :Department, `PhoneNumber` = :PhoneNumber WHERE `workers`.`id` = ".$id);
+        $this->dbh->bind(':Name', $this->Name);
+        $this->dbh->bind(':Department', $this->Department);
+        $this->dbh->bind(':PhoneNumber', $this->PhoneNumber);
+        $workRecord = $this->dbh->execute();
+        return $workRecord;
     }
 
 
