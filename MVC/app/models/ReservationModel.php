@@ -87,7 +87,7 @@ class ReservationModel extends model
          $this->dbh->bind(':Email', $this->email);
 
         return $this->dbh->execute();
-    }
+     }
 
 
 
