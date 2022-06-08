@@ -1,6 +1,3 @@
-
-
-
 <html>
 <head>
 
@@ -34,50 +31,102 @@ class Gallery extends View
      require APPROOT . '/views/inc/navbar.php';
     $text = <<<EOT
        <div class="container">
-        <div class="row">
-  <a target="_blank" href="http://localhost/mvc/public/images/2.jpg">
-    <img src="http://localhost/mvc/public/images/2.jpg" width="370" height="300" style="padding-top: 20px; padding-right: 15px; padding-bottom: 20px; padding-left: 15px; ">
+  <a target="_blank" href="http://localhost/mvc/public/images/pic (40).jpg">
+    <img src="http://localhost/mvc/public/images/pic (40).jpg" width="370" height="300" style="padding-top: 20px; padding-right: 15px; padding-bottom: 20px; padding-left: 15px; ">
   </a>
   
-    <a target="_blank" href="http://localhost/mvc/public/images/1.jpg" >
-    <img src="http://localhost/mvc/public/images/1.jpg" width="370" height="300" style="padding-top: 20px; padding-right: 15px; padding-bottom: 20px; padding-left: 15px; ">
+    <a target="_blank" href="http://localhost/mvc/public/images/pic (41).jpg" >
+    <img src="http://localhost/mvc/public/images/pic (41).jpg" width="370" height="300" style="padding-top: 20px; padding-right: 15px; padding-bottom: 20px; padding-left: 15px; ">
   </a>
 
-  <a target="_blank" href="http://localhost/mvc/public/images/3.jpg" >
-    <img src="http://localhost/mvc/public/images/3.jpg" width="370" height="300" style="padding-top: 20px; padding-right: 15px; padding-bottom: 20px; padding-left: 15px; ">
+  <a target="_blank" href="http://localhost/mvc/public/images/pic (39).jpg" >
+    <img src="http://localhost/mvc/public/images/pic (39).jpg" width="370" height="300" style="padding-top: 20px; padding-right: 15px; padding-bottom: 20px; padding-left: 15px; ">
   </a>
 
-    <a target="_blank" href="http://localhost/mvc/public/images/4.jpg" >
-    <img src="http://localhost/mvc/public/images/4.jpg" width="370" height="300" style="padding-top: 20px; padding-right: 15px; padding-bottom: 20px; padding-left: 15px; ">
+    <a target="_blank" href="http://localhost/mvc/public/images/pic (38).jpg" >
+    <img src="http://localhost/mvc/public/images/pic (38).jpg" width="370" height="300" style="padding-top: 20px; padding-right: 15px; padding-bottom: 20px; padding-left: 15px; ">
+  </a>
+  <a target="_blank" href="http://localhost/mvc/public/images/pic (37).jpg">
+    <img src="http://localhost/mvc/public/images/pic (37).jpg" width="370" height="300" style="padding-top: 20px; padding-right: 15px; padding-bottom: 20px; padding-left: 15px; ">
+  </a>
+  
+    <a target="_blank" href="http://localhost/mvc/public/images/pic (36).jpg" >
+    <img src="http://localhost/mvc/public/images/pic (36).jpg" width="370" height="300" style="padding-top: 20px; padding-right: 15px; padding-bottom: 20px; padding-left: 15px; ">
   </a>
 
-  <a target="_blank" href="http://localhost/mvc/public/images/2.jpg">
-    <img src="http://localhost/mvc/public/images/2.jpg"  width="370" height="300" style="padding-top: 20px; padding-right: 15px; padding-bottom: 20px; padding-left: 15px; ">
+  <a target="_blank" href="http://localhost/mvc/public/images/pic (35).jpg" >
+    <img src="http://localhost/mvc/public/images/pic (35).jpg" width="370" height="300" style="padding-top: 20px; padding-right: 15px; padding-bottom: 20px; padding-left: 15px; ">
   </a>
 
-    <a target="_blank" href="http://localhost/mvc/public/images/1.jpg">
-    <img src="http://localhost/mvc/public/images/1.jpg"  width="370" height="300" style="padding-top: 20px; padding-right: 15px; padding-bottom: 20px; padding-left: 15px; ">
+    <a target="_blank" href="http://localhost/mvc/public/images/pic (34).jpg" >
+    <img src="http://localhost/mvc/public/images/pic (34).jpg" width="370" height="300" style="padding-top: 20px; padding-right: 15px; padding-bottom: 20px; padding-left: 15px; ">
   </a>
 
-    <a target="_blank" href="http://localhost/mvc/public/images/2.jpg">
-    <img src="http://localhost/mvc/public/images/2.jpg"  width="370" height="300" style="padding-top: 20px; padding-right: 15px; padding-bottom: 20px; padding-left: 15px; ">
+   <a target="_blank" href="http://localhost/mvc/public/images/pic (33).jpg">
+    <img src="http://localhost/mvc/public/images/pic (33).jpg" width="370" height="300" style="padding-top: 20px; padding-right: 15px; padding-bottom: 20px; padding-left: 15px; ">
+  </a>
+  
+    <a target="_blank" href="http://localhost/mvc/public/images/pic (32).jpg" >
+    <img src="http://localhost/mvc/public/images/pic (32).jpg" width="370" height="300" style="padding-top: 20px; padding-right: 15px; padding-bottom: 20px; padding-left: 15px; ">
   </a>
 
-    <a target="_blank" href="http://localhost/mvc/public/images/1.jpg" >
-    <img src="http://localhost/mvc/public/images/1.jpg"  width="370" height="300" style="padding-top: 20px; padding-right: 15px; padding-bottom: 20px; padding-left: 15px; ">
+  <a target="_blank" href="http://localhost/mvc/public/images/pic (31).jpg" >
+    <img src="http://localhost/mvc/public/images/pic (31).jpg" width="370" height="300" style="padding-top: 20px; padding-right: 15px; padding-bottom: 20px; padding-left: 15px; ">
   </a>
 
-    <a target="_blank" href="http://localhost/mvc/public/images/4.jpg" >
-    <img src="http://localhost/mvc/public/images/4.jpg"  width="370" height="300" style="padding-top: 20px; padding-right: 15px; padding-bottom: 20px; padding-left: 15px; ">
+    <a target="_blank" href="http://localhost/mvc/public/images/pic (30).jpg" >
+    <img src="http://localhost/mvc/public/images/pic (30).jpg" width="370" height="300" style="padding-top: 20px; padding-right: 15px; padding-bottom: 20px; padding-left: 15px; ">
   </a>
 
-  <a target="_blank" href="http://localhost/mvc/public/images/2.jpg" >
-    <img src="http://localhost/mvc/public/images/2.jpg"  width="370" height="300" style="padding-top: 20px; padding-right: 15px; padding-bottom: 20px; padding-left: 15px; ">
+
+  <a target="_blank" href="http://localhost/mvc/public/images/pic (25).jpg" >
+    <img src="http://localhost/mvc/public/images/pic (25).jpg" width="370" height="300" style="padding-top: 20px; padding-right: 15px; padding-bottom: 20px; padding-left: 15px; ">
   </a>
 
-    <a target="_blank" href="http://localhost/mvc/public/images/1.jpg" >
-    <img src="http://localhost/mvc/public/images/1.jpg"  width="370" height="300" style="padding-top: 20px; padding-right: 15px; padding-bottom: 20px; padding-left: 15px; ">
+    <a target="_blank" href="http://localhost/mvc/public/images/pic (24).jpg" >
+    <img src="http://localhost/mvc/public/images/pic (24).jpg" width="370" height="300" style="padding-top: 20px; padding-right: 15px; padding-bottom: 20px; padding-left: 15px; ">
   </a>
+
+   <a target="_blank" href="http://localhost/mvc/public/images/pic (23).jpg">
+    <img src="http://localhost/mvc/public/images/pic (23).jpg" width="370" height="300" style="padding-top: 20px; padding-right: 15px; padding-bottom: 20px; padding-left: 15px; ">
+  </a>
+  
+    <a target="_blank" href="http://localhost/mvc/public/images/pic (22).jpg" >
+    <img src="http://localhost/mvc/public/images/pic (22).jpg" width="370" height="300" style="padding-top: 20px; padding-right: 15px; padding-bottom: 20px; padding-left: 15px; ">
+  </a>
+
+  <a target="_blank" href="http://localhost/mvc/public/images/pic (21).jpg" >
+    <img src="http://localhost/mvc/public/images/pic (21).jpg" width="370" height="300" style="padding-top: 20px; padding-right: 15px; padding-bottom: 20px; padding-left: 15px; ">
+  </a>
+
+    <a target="_blank" href="http://localhost/mvc/public/images/pic (20).jpg" >
+    <img src="http://localhost/mvc/public/images/pic (20).jpg" width="370" height="300" style="padding-top: 20px; padding-right: 15px; padding-bottom: 20px; padding-left: 15px; ">
+  </a>
+
+  <a target="_blank" href="http://localhost/mvc/public/images/pic (9).jpg" >
+    <img src="http://localhost/mvc/public/images/pic (9).jpg" width="370" height="300" style="padding-top: 20px; padding-right: 15px; padding-bottom: 20px; padding-left: 15px; ">
+  </a>
+
+    <a target="_blank" href="http://localhost/mvc/public/images/pic (10).jpg" >
+    <img src="http://localhost/mvc/public/images/pic (10).jpg" width="370" height="300" style="padding-top: 20px; padding-right: 15px; padding-bottom: 20px; padding-left: 15px; ">
+  </a>
+
+   <a target="_blank" href="http://localhost/mvc/public/images/pic (29).jpg">
+    <img src="http://localhost/mvc/public/images/pic (29).jpg" width="370" height="300" style="padding-top: 20px; padding-right: 15px; padding-bottom: 20px; padding-left: 15px; ">
+  </a>
+  
+    <a target="_blank" href="http://localhost/mvc/public/images/pic (28).jpg" >
+    <img src="http://localhost/mvc/public/images/pic (28).jpg" width="370" height="300" style="padding-top: 20px; padding-right: 15px; padding-bottom: 20px; padding-left: 15px; ">
+  </a>
+
+  <a target="_blank" href="http://localhost/mvc/public/images/pic (27).jpg" >
+    <img src="http://localhost/mvc/public/images/pic (27).jpg" width="370" height="300" style="padding-top: 20px; padding-right: 15px; padding-bottom: 20px; padding-left: 15px; ">
+  </a>
+
+    <a target="_blank" href="http://localhost/mvc/public/images/pic (26).jpg" >
+    <img src="http://localhost/mvc/public/images/pic (26).jpg" width="370" height="300" style="padding-top: 20px; padding-right: 15px; padding-bottom: 20px; padding-left: 15px; ">
+  </a>
+
 
 
 EOT;  
@@ -85,4 +134,5 @@ EOT;
     require APPROOT . '/views/inc/footer.php';
   }
 }
+
 
