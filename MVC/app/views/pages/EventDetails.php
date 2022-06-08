@@ -33,39 +33,25 @@ class EventDetails extends view
     $title = $this->model->title;
     $data = $this->model->data;
 
-    require APPROOT . '/views/inc/navbar.php';
+    require APPROOT . '/views/pages/adminPage.php';
+
+     $action = URLROOT . 'pages/EventDetails';
     $text = <<<EOT
-<div id="booking" class="section">
-    <div class="section-center">
-      <div class="container">
-        <div class="row">
-          <div class="booking-form">
-            <div class="form-header">
-              <h1>Event Details Form</h1>
+   <center> <h1 style="color:pink;">Event Details Form</h1></center>
+<div class="section">
+    <div class="section-center" >
+      <div class="container"  >
+          <div class="form">
+          <center>
+              
             </div>
-            <form>
-              <div class="form-group">
-                <input class="form-control" type="text" placeholder="Enter name">
-                <span class="form-label">Name</span>
-              </div>
+            <form action="$action" method="post">
               <div class="row">
-                <div class="col-md-6">
+                 <div class="col-md-4">
                   <div class="form-group">
-                    <input class="form-control" type="date" required>
-                    <span class="form-label">Event Date</span>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input class="form-control" type="time" required>
-                    <span class="form-label">Event Time</span>
-                  </div>
-                </div>
-              </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <select class="form-control" required>
-                      <option value="" selected hidden>Event type</option>
+                  <br>
+                    <select class="form-control" required placeholder="choose the event type" name="eventtype">
+                      <option hidden>Enter the event type</option>
                       <option>Wedding</option>
                       <option>Engagment</option>
                       <option>Prom</option>
@@ -74,27 +60,38 @@ class EventDetails extends view
                       <option>conferences</option>
                     </select>
                      <span class="select-arrow"></span>
-                    <span class="form-label">Events</span>
-                  </div>
-                </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input class="form-control" type="email" placeholder="Enter Email">
-                    <span class="form-label">Email</span>
+                    <span class="form-label" ></span>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input class="form-control" type="tel" placeholder="Enter Phone Num">
-                    <span class="form-label">Phone</span>
+                  <span class="form-label">Event Date</span>
+                    <input class="form-control" type="date" placeholder="Enter the event date" required name="date">
                   </div>
                 </div>
-              </div>
-                  <div class="col-md-4">
+                <div class="col-md-6">
                   <div class="form-group">
-                    <select class="form-control" required>
-                      <option value="" selected hidden placeholder="5 is the best">guests number</option>
+                  <br>
+                  <span class="form-label">Event Starting Time</span>
+                    <input class="form-control" type="time" placeholder="Enter the event start time" required name="starttime">
+                    
+                  </div>
+                </div>
+              
+                <div class="col-md-6">
+                  <div class="form-group">
+                  <br>
+                    <span class="form-label" placeholder="Enter the event end time">Event End Time</span>
+                    <input class="form-control" type="time"  required name="endtime">
+                  
+                  </div>
+                </div>
+                </div>
+                   <div class="row">
+                  <div class="form-group">
+                   <br>
+                    <select class="form-control" required name="guestsnumber">
+                      <option hidden>Enter the guests number</option>
                       <option>10</option>
                       <option>20</option>
                       <option>30</option>
@@ -105,11 +102,38 @@ class EventDetails extends view
                       <option>1000</option>
                     </select>
                     <span class="select-arrow"></span>
-                    <span class="form-label">Events</span>
+                    <span class="form-label"></span>
                   </div>
                 </div>
-              <div class="form-btn">
-                <button class="submit-btn">Reserve</button>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                   <br>
+                    <input class="form-control" type="text" placeholder="Enter Client Name" name="client">
+                    <span class="form-label"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group">
+                   <br>
+                    <input class="form-control" type="text" placeholder="Enter Location of event" name="location">
+                    <span class="form-label"></span>
+                  </div>
+                </div>
+              </div>
+                <div class="form-group">
+                 <br>
+                <input class="form-control" type="text" placeholder="Enter supplier name" name="supplier">
+                <span class="form-label"></span>
+              </div>
+               <div class="form-group">
+                <br>
+                <input class="form-control" type="text" placeholder="Enter the client requirements needed" name="requirements">
+                <span class="form-label"></span>
+              </div>
+              <div class="form-btn"><center>
+                <button class="submit-btn"  style= "background-color: pink; border:black; color:white; font-size:20px;">Reserve</button>
+                </center>
               </div>
             </form>
           </div>
@@ -134,7 +158,7 @@ class EventDetails extends view
 
 EOT;
     echo $text;
-    require APPROOT . '/views/inc/footer.php';
+
   }
 }
 ?>
