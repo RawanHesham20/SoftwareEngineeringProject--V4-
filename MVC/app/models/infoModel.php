@@ -9,6 +9,13 @@ class infoModel extends model{
         $WorkersRecord = $this->dbh->resultSet();
         return $WorkersRecord;
     }
+	 public function getWorkerById($id){
+        $this->dbh->query('select * from workers where id='.$id);
+        $WorkersRecord = $this->dbh->resultSet();
+        return $WorkersRecord;
+    }
+	
+}
 	
 }
 
