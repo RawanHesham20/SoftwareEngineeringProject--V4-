@@ -7,7 +7,6 @@ class AddSuppliers extends view
     require APPROOT . '/views/pages/adminPage.php';
 
     $this->printForm();
-    require APPROOT . '/views/inc/footer.php';
 
   }
 
@@ -19,15 +18,12 @@ class AddSuppliers extends view
     <div class="row">
     <div class="col-md-6 mx-auto">
     <div class="card card-body bg-light mt-5">
-    <h2>Sign Up</h2>
+   <center> <h2>Sign Up</h2></center>
     <form action="$action" method="post">
 EOT;
     echo $text;
     $text = <<<EOT
-      <div class="form-group">
-      <label for="ID"> ID: <sup>*</sup></label>
-      <input type="text" name="id" id="id"  >
-    </div>
+    <div class="container">
   <div class="form-group">
       <label for="Name"> Name: <sup>*</sup></label>
       <input type="text" name="name" id="name"  >
@@ -53,10 +49,11 @@ EOT;
     </form>
     </div>
     </div>
-    </div>
+    </div></div>
 EOT;
     echo $text;
   }
 
 }
 ?>
+
