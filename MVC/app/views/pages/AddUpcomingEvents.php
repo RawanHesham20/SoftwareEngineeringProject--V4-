@@ -37,45 +37,50 @@ class AddUpcomingEvents extends view
      $action = URLROOT . 'pages/AddUpcomingEvents';
     $text = <<<EOT
    <div class="container">
-<div id="booking" class="section">
+<div class="section">
     <div class="section-center">
         <div class="row">
-          <div class="booking-form">
-            <div class="form-header">
-              <h1>Add The New Upcoming Event</h1>
-            </div>
+          <div class="form">
+            <div class="form-header"><center>
+              <h1 style= "background-color: pink; border:black; color:white; font-size:70px;">Add The New Upcoming Event</h1>
+           </center> </div>
+           <br>
             <form action="$action" method="post" enctype="multipart/form-data">
               <div class="form-group">
+              <span class="form-label">Title</span>
                 <input class="form-control" type="text" placeholder="Enter The event Title" name="title1">
-                <span class="form-label">Title</span>
+                
               </div>
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
+                   <span class="form-label">Event Date</span>
                     <input class="form-control" type="text" placeholder="Enter the event date" required name="date">
-                    <span class="form-label">Event Date</span>
+                   
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
+                  <span class="form-label">Event Time</span>
                     <input class="form-control" type="text" placeholder="Enter the event time" required name="time">
-                    <span class="form-label">Event Time</span>
+                    
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
+                   <span class="form-label">Location</span>
                     <input class="form-control" type="text" placeholder="Enter the event Location" name="location">
-                    <span class="form-label">Location</span>
+                   
                   </div>
                 </div>
                 <p>
                       <label for="picture">Event Image</label>
                   <input type="file" value="Event Image" name="picture">
                   </p>
-              <div class="form-btn">
-                <button class="submit-btn">Add</button>
+              <div class="form-btn"><center>
+                <button class="submit-btn" style= "background-color: pink; border:black; color:white; font-size:20px;">Add</button></center>
               </div>
             </form>
           </div>
