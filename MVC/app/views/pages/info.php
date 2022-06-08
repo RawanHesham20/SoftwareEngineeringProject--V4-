@@ -62,7 +62,7 @@ class info extends view
 
             <?php $str= "<table class='table table-bordered' width=100%>
                   <thead>
-                      <tr>
+                      <tr style= 'background-color: pink; color:white; font-size:20px;'>
                            <th>ID</th>
                           <th>Name</th>
                           <th>Department</th>
@@ -75,7 +75,7 @@ class info extends view
                         
                         foreach($workers as $x){
                         
-                          $str.="<tr><td>".$x->id."</td><td>".$x->Name."</td><td>".$x->Department."</td><td>".$x->PhoneNumber."</td><td><button style= 'background-color: transparent; border:black;'><a href='EditWorker' style ='color: #FF1493';class='edit' title='Edit' data-toggle='tooltip'><i class='material-icons'>&#xE254;</i></a></button><button style= 'background-color: transparent; border:none;''><a href='DeleteWorker' style ='color: #FFB6C1;'' class='delete' title='Delete' data-toggle='tooltip'><i class='material-icons'>&#xE872;</i></a> </center></button></td></tr>";
+                          $str.="<tr><td>".$x->id."</td><td>".$x->Name."</td><td>".$x->Department."</td><td>".$x->PhoneNumber."</td><td><button style= 'background-color: transparent; border:black;'><a href='EditWorker/".$x->id."' style ='color: #FF1493';class='edit' title='Edit' data-toggle='tooltip'><i class='material-icons'>&#xE254;</i></a></button><button style= 'background-color: transparent; border:none;''><a href='DeleteWorker/".$x->id."' style ='color: #FFB6C1;'' class='delete' title='Delete' data-toggle='tooltip'><i class='material-icons'>&#xE872;</i></a> </center></button></td></tr>";
 
 
                             }
@@ -89,10 +89,12 @@ class info extends view
           ?>
         </div></div>
       </body></html>
-          <?php
-   require APPROOT . '/views/inc/footer.php';
+      
 
-              ?>
+    
+                    
+
+
 
     
                     
