@@ -13,7 +13,7 @@ class feedback extends View
    
 <html>
  <style>
-      html, body {
+     body {
       min-height: 100%;
       }
       body, p { 
