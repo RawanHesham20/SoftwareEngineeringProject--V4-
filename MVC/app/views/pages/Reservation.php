@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="http://localhost/mvc/public/css/bootstrap.css">
   <link rel="stylesheet" href="http://localhost/mvc/public/css/animate.css">
   <script src="http://localhost/mvc/public/js/modernizr-2.6.2.min.js"></script>
-  
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
   <title>Ekdolosi Events</title>
 </head>
 
@@ -30,41 +30,73 @@ class Reservation extends view
 
   public function output()
   {
+
     $title = $this->model->title;
     $data = $this->model->data;
 
     require APPROOT . '/views/inc/navbar.php';
+     $action = URLROOT . 'pages/Reservation';
     $text = <<<EOT
-<div id="booking" class="section">
+<div class="section">
     <div class="section-center">
       <div class="container">
         <div class="row">
-          <div class="booking-form">
+          <div class="form">
             <div class="form-header">
-              <h1>Make your reservation</h1>
+            <center>
+              <h1 style= " color:pink;">Make your reservation</h1></center>
             </div>
-            <form>
+            <form action="$action" method="post">
               <div class="form-group">
-                <input class="form-control" type="text" placeholder="Enter your name">
-                <span class="form-label">Name</span>
+                    <span class="form-label">Name</span>
+                <input class="form-control" type="text" placeholder="Enter your name" name="name">
+          
               </div>
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input class="form-control" type="date" required>
-                    <span class="form-label">Meeting Date</span>
+                  <span class="form-label">Meeting Date</span>
+                    <input class="form-control" type="date" required name="date">
+                    
                   </div>
                 </div>
-                <div class="col-md-6">
+                  <div class="col-md-4">
                   <div class="form-group">
-                    <input class="form-control" type="time" required>
-                    <span class="form-label">Meeting Time</span>
+                  <br>
+                    <select class="form-control" required name="time">
+                      <option value="" selected hidden>Choose a time slot from the bellow schedule</option>
+                      <option>Slot1</option>
+                      <option>Slot2</option>
+                      <option>Slot3</option>
+                      <option>Slot4</option>
+                      <option>Slot5</option>
+                      <option>Slot6</option>
+                      <option>Slot7</option>
+                      <option>Slot8</option>
+                      <option>Slot9</option>
+                      <option>Slot10</option>
+                      <option>Slot11</option>
+                      <option>Slot12</option>
+                      <option>Slot13</option>
+                      <option>Slot14</option>
+                      <option>Slot15</option>
+                      <option>Slot16</option>
+                      <option>Slot17</option>
+                      <option>Slot18</option>
+                      <option>Slot19</option>
+                      <option>Slot20</option>
+                    </select>
+                    <span class="select-arrow"></span>
+                    <a href='schedule' style="color:pink;"><i style='font-size:24px' class='far'>&#xf073;</i></a>
                   </div>
                 </div>
+
               </div>
+
                 <div class="col-md-4">
                   <div class="form-group">
-                    <select class="form-control" required>
+                  <br>
+                    <select class="form-control" required name="eventtype">
                       <option value="" selected hidden>Event type</option>
                       <option>Wedding</option>
                       <option>Engagment</option>
@@ -74,25 +106,28 @@ class Reservation extends view
                       <option>conferences</option>
                     </select>
                     <span class="select-arrow"></span>
-                    <span class="form-label">Rooms</span>
+                
                   </div>
                 </div>
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input class="form-control" type="email" placeholder="Enter your Email">
-                    <span class="form-label">Email</span>
+                  <span class="form-label">Email</span>
+                    <input class="form-control" type="email" placeholder="Enter your Email" name="email">
+                    
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input class="form-control" type="tel" placeholder="Enter you Phone Number">
-                    <span class="form-label">Phone</span>
+                     <span class="form-label">Phone</span>
+                    <input class="form-control" type="tel" placeholder="Enter you Phone Number" name="number">
+                 
                   </div>
                 </div>
               </div>
-              <div class="form-btn">
-                <button class="submit-btn">Reserve</button>
+
+              <div class="form-btn"><center>
+                <button class="submit-btn" style= "background-color: pink; border:black; color:white; font-size:20px;">Reserve</button></center>
               </div>
             </form>
           </div>
